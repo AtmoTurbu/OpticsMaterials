@@ -9,7 +9,7 @@
 
 static int INITSTATUS_OpticsMaterials = 0;
 
-
+/*
 void __attribute__ ((constructor)) libinit_OpticsMaterials()
 {
 	if ( INITSTATUS_OpticsMaterials == 0 )
@@ -19,6 +19,8 @@ void __attribute__ ((constructor)) libinit_OpticsMaterials()
 		INITSTATUS_OpticsMaterials = 1; 
 	}
 }
+
+*/
 
 
 int init_OpticsMaterials()

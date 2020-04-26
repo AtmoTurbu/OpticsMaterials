@@ -1,9 +1,30 @@
-project(lib_OpticsMaterials_project)
+# library name
+set(LIBNAME "coffeeOpticsMaterials")
+set(SRCNAME "OpticsMaterials")
+
+
+set(SOURCEFILES
+	${SRCNAME}.c
+)
+
+set(INCLUDEFILES
+	${SRCNAME}.h)
+
+
+# DEFAULT SETTINGS 
+# Do not change unless needed
+# =====================================================================
+
+project(lib_${LIBNAME}_project)
 
 include_directories ("${PROJECT_SOURCE_DIR}/src")
 include_directories ("${PROJECT_SOURCE_DIR}/..")
-add_library(OpticsMaterials SHARED OpticsMaterials.c)
 
-install(TARGETS OpticsMaterials DESTINATION lib)
-install(FILES OpticsMaterials.h DESTINATION include)
 
+# Library can be compiled from multiple source files
+# Convention: the main souce file is named <libname>.c
+# 
+add_library(${LIBNAME} SHARED ${SOURCEFILES})
+
+install(TARGETS ${LIBNAME} DESTINATION lib)
+install(FILES ${INCLUDEFILES} DESTINATION include/${SRCNAME})
